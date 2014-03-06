@@ -15,11 +15,13 @@
 # limitations under the License.
 #
 import webapp2
+from aerialassist.scouting_data import ScoutingData
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        self.response.write('Sparx 1126 Scouting Service!')
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    webapp2.Route(r'/api/2014/v1/ScoutingData/<team_key>/<event_key>/<match_key>', ScoutingData)
 ], debug=True)
