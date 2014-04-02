@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import logging
 import webapp2
 import json
 from aerialassist.model.scouting import Scouting, ScoutingAuto, ScoutingTele, ScoutingGeneral
@@ -36,6 +37,7 @@ class GetScoutingData(webapp2.RequestHandler):
 class PostScoutingData(webapp2.RequestHandler):
     def post(self):
         jsonRoot = json.loads(self.request.body)
+        logging.info('%s',jsonRoot) 
         scouting = Scouting()
         scouting.populate(**jsonRoot)
         scouting.put()
