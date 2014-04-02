@@ -1,7 +1,8 @@
 from google.appengine.ext import ndb
 
 class ScoutingAuto(ndb.Model):
-    startingLocation = ndb.JsonProperty()
+    startingLocationX = ndb.IntegerProperty()
+    startingLocationY = ndb.IntegerProperty()
     startedWithBall = ndb.BooleanProperty()
     ballsAcquired = ndb.IntegerProperty()
     ballsShot = ndb.IntegerProperty()
@@ -10,7 +11,8 @@ class ScoutingAuto(ndb.Model):
     ballsScoredHotLow = ndb.IntegerProperty()
     ballsScoredHigh = ndb.IntegerProperty()
     ballsScoredLow = ndb.IntegerProperty()
-    endingLocation = ndb.JsonProperty()
+    endingLocationX = ndb.IntegerProperty()
+    endingLocationY = ndb.IntegerProperty()
 
 class ScoutingTele(ndb.Model):
     ballsAcquiredFromFloor = ndb.IntegerProperty()
