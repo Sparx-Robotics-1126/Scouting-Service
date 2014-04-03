@@ -36,8 +36,8 @@ class GetScoutingData(webapp2.RequestHandler):
 
 class PostScoutingData(webapp2.RequestHandler):
     def post(self):
+        logging.info('%s',self.request.body) 
         jsonRoot = json.loads(self.request.body)
-        logging.info('%s',jsonRoot) 
         scouting = Scouting()
         scouting.populate(**jsonRoot)
         scouting.put()
