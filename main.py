@@ -19,7 +19,7 @@ from aerialassist.scouting_data import GetScoutingData, PostScoutingData
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Sparx 1126 Scouting Service!')
+        self.response.write('Sparx 1126 Scouting Service FIN!')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

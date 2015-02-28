@@ -41,5 +41,6 @@ class PostScoutingData(webapp2.RequestHandler):
         scouting = Scouting()
         scouting.populate(**jsonRoot)
         scouting.put()
-        
-        self.response.status = 200
+		
+        self.response.status = 200  
+        self.response.write('DATA WRITEN')
